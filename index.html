@@ -5,22 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Lista de tarefas</title>
   </head>
   <body>
     <header></header>
-    <main>
-      <h1>Lista de tarefas</h1>
-      <form action="" id="todo-form">
-        <input
-          type="text"
-          placeholder="Informe a sua tarefa.... "
-          id="task-title-input"
-        />
-        <button type="submit" id="add-task-button">Adicionar</button>
-      </form>
-      <section>
-        <ul id="todo-list"></ul>
+    <main class="container">
+      <section class="content">
+        <section class="input">
+          <h1 class="list-title">To Do List</h1>
+          <div class="lineH"></div>
+          <form action="" id="todo-form">
+            <input
+              type="text"
+              placeholder="New Task ..."
+              id="task-title-input"
+            />
+            <button type="submit" id="add-task-button">Add</button>
+          </form>
+        </section>
+        <section class="list-content">
+          <ul id="todo-list"></ul>
+        </section>
       </section>
     </main>
     <footer></footer>

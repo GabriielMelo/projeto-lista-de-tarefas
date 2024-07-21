@@ -40,8 +40,10 @@ function renderTasksOnHtml(taskTitle, done = false) {
   }
 
   const button = document.createElement("button");
-  button.textContent = "Remover";
+  button.textContent = "x";
   button.addEventListener("click", (event) => {
+    const remove = window.confirm("Delete this task?");
+    if (!remove) return;
     const liToRemove = event.target.parentElement;
     const titleToRemove = liToRemove.querySelector("span").textContent;
     tasks = tasks.filter((t) => t.title !== titleToRemove);
@@ -66,8 +68,8 @@ window.onload = () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // evitando página de recarregar ao inserir formulario
   const taskTitle = taskTitleInput.value;
-  if (taskTitle.length < 3) {
-    window.alert("Tarefa inválida!");
+  if (taskTitle.length < 3 || taskTitle.length > 15) {
+    window.alert("Invalid task!");
     return;
   }
   tasks.push({
